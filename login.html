@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+      
+	</head>
+
+	<body>
+		<div class="login">
+			<div class="logo">
+				<img src="img/logo-201305-b.png" />
+				<b></b>
+			</div>
+			<div class="login_r">
+				<b></b>
+				登陆页面，调查问卷
+			</div>
+		</div>
+		
+       <div class="content">
+       	<div class="content_bg">   
+       		<div class="form">
+       		<div class="login_left total" onclick="left()">
+       			<a id="a1" href="#">扫码登录</a>
+       		</div>
+       		<div class="login_right total" onclick="right()">
+       			<a id="a2" href="#">账户登录</a>
+       		</div>
+       	     <div id="erweima" class="erweima">
+       	     	<div class="erwei"></div>
+       	     	<div class="openjd">
+       	     		<span>打开<a href="#">手机京东</a>　扫描二维码</span>
+       	     	</div>
+       	     	<div class="more">
+       	     		<ul class="morelist">
+       	     			<li><i class="more1"></i>　<span>免输入</span></li>　
+       	     			<li><i class="more2"></i>　<span>更快</span></li>　
+       	     			<li><i class="more3"></i>　<span>更安全</span></li>
+       	     		</ul>
+       	     	</div>
+       	     </div>
+             <div id="login_box" class="login_box">      	     	
+       	     	<div class="mc">
+       	     		<div class="mc_top same">
+      	     		<i></i>	
+       	     		<input type="text" id="user" value="" placeholder="请输入邮箱" />
+       	     		</div>
+       	     		<div class="mc_buttom same">
+       	     			<i></i>
+       	     		<input type="text" id="psw" value="" placeholder="请输入六位字符"/>      	     		
+       	     		</div>
+       	     		<div class="psw">
+       	     		<a>忘记密码</a>
+       	     		</div>
+       	     		<div class="logink">       	     		
+       	     			<a href="index.html">登　　录</a>
+       	     		</div>
+       	     	</div>
+       	     </div>
+     	     
+       	     <div class="butto">
+       	     	<ul class="message">
+       	     		<li><i class="qq"></i><a href="#">　QQ　</a></li>
+       	     		<li><i class="weix"></i><a href="#">　微信</a></li>
+       	     		<li class="buright"><i class="now"></i><a href="#">　立即注册</a></li>
+       	     	</ul>
+       	     </div>
+       		</div>
+       	</div>       	
+       </div>
+	</body>
+</html>
+<script type="text/javascript">
+		var ouser=document.getElementById("user");
+		var opsw=document.getElementById("psw");
+	ouser.onblur=function(){
+		var reg=/^[1-9a-zA-Z]\w*@[a-zA-Z0-9]+(\.[a-zA-Z]{2,})+$/
+			if(reg.test(this.value)){				
+			}else{
+				alert("请输入邮箱");
+			}				
+	}
+	opsw.onblur=function(){
+		var reg=/^[1-9a-zA-z]{6,}/
+		if(reg.test(this.value)){			
+			}else{
+				alert("密码格式错误");
+			}		
+	}
+	
+//	var erweima=document.getElementsByClassName("erweima")[0];
+//	var login=document.getElementsByClassName("login_box")[0];
+	var erweima=document.getElementById("erweima");
+	var login=document.getElementById("login_box");
+		function left(){
+			console.log(11)
+			document.getElementById("a2").style.color="#666666";
+			document.getElementById("a1").style.color="red";
+			erweima.style.display="block";
+			login.style.display="none";
+		}
+		
+		function right(){
+			document.getElementById("a2").style.color="red";
+			document.getElementById("a1").style.color="#666666";
+			erweima.style.display="none";
+			login.style.display="block";
+		}
+
+	</script>
